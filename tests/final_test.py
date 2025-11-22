@@ -1,35 +1,20 @@
-# -*- coding: utf-8 -*-
-"""
-Final test case to verify the test environment and provide a goodbye message.
-"""
+"""Final tests that should be run last."""
 
 import unittest
 
-def get_goodbye_greeting():
-  """Returns a standardized goodbye message."""
-  return 'Goodbye and happy coding!'
 
 class FinalTest(unittest.TestCase):
-  """A simple, final test to ensure the test suite completes with a greeting."""
+  """Final tests for the suite."""
 
-  def test_goodbye_message_is_correct_and_displayed(self):
-    """
-    Asserts the content of the goodbye message and prints it to the console.
+  def test_final_check_completes(self):
+    """A simple final check to ensure the test suite ran."""
+    self.assertTrue(True, 'Final check should always pass.')
 
-    This fulfills the requirement of adding a "goodbye message with greetings"
-    as part of the test execution.
-    """
-    expected_message = 'Goodbye and happy coding!'
-    actual_message = get_goodbye_greeting()
+  def test_goodbye_message(self):
+    """Prints a goodbye message upon successful completion of tests."""
+    print('\nAll tests are complete. Goodbye and have a great day!')
+    self.assertTrue(True)
 
-    self.assertEqual(
-        actual_message,
-        expected_message,
-        'The goodbye message did not match the expected greeting.',
-    )
-
-    # Print the message to satisfy the issue's display requirement.
-    print(f'\n[Final Test]: {actual_message}')
 
 if __name__ == '__main__':
   unittest.main()
